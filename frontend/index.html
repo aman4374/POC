@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSPRNG AES-CTR Encryption</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSPRNG AES-CTR Encryption</h1>
+        <textarea id="message" placeholder="Enter message to encrypt"></textarea>
+        <button onclick="encryptMessage()">Encrypt</button>
+        <p><strong>Encrypted Message:</strong> <span id="encryptedMessage"></span></p>
+        <p><strong>Seed:</strong> <span id="seed"></span></p>
+
+        <textarea id="decryptInput" placeholder="Enter encrypted message"></textarea>
+        <input type="text" id="seedInput" placeholder="Enter seed">
+        <button onclick="decryptMessage()">Decrypt</button>
+        <p><strong>Decrypted Message:</strong> <span id="decryptedMessage"></span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
