@@ -59,8 +59,4 @@ Navigate to the `frontend` directory and open `index.html` in your browser.
 3. Paste them into the decryption fields and click on **Decrypt** to retrieve the original message.
 
 
-Feel free to submit issues and pull requests to improve this project!
-
-## License
-This project is licensed under the MIT License.
 
