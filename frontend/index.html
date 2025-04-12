@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSPRNG AES-CTR Encryption</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quantum CSPRNG Encryption</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <div class="container">
-        <h1>CSPRNG AES-CTR Encryption</h1>
-        <textarea id="message" placeholder="Enter message to encrypt"></textarea>
-        <button onclick="encryptMessage()">Encrypt</button>
-        <p><strong>Encrypted Message:</strong> <span id="encryptedMessage"></span></p>
-        <p><strong>Seed:</strong> <span id="seed"></span></p>
+  <div class="container">
+    <h1>🔐 Quantum-Inspired Message Encryption</h1>
 
-        <textarea id="decryptInput" placeholder="Enter encrypted message"></textarea>
-        <input type="text" id="seedInput" placeholder="Enter seed">
-        <button onclick="decryptMessage()">Decrypt</button>
-        <p><strong>Decrypted Message:</strong> <span id="decryptedMessage"></span></p>
+    <label>Enter a Message</label>
+    <textarea id="inputMessage" placeholder="Type a secret message..."></textarea>
+
+    <div class="btn-group">
+      <button onclick="encrypt()">Encrypt</button>
     </div>
 
-    <script src="script.js"></script>
+    <label>Generated Seed</label>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <pre id="seedOutput">--</pre>
+      <div style="display: flex; align-items: center;">
+        <i class="fas fa-clipboard copy-btn" onclick="copyToClipboard('seedOutput')"></i>
+        <span id="seedCopied" class="copied-text">Copied!</span>
+      </div>
+    </div>
+
+    <label>Encrypted Message (Base64)</label>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <pre id="encryptedOutput">--</pre>
+      <div style="display: flex; align-items: center;">
+        <i class="fas fa-clipboard copy-btn" onclick="copyToClipboard('encryptedOutput')"></i>
+        <span id="encryptedCopied" class="copied-text">Copied!</span>
+      </div>
+    </div>
+
+    <label>Enter Seed (for manual decryption)</label>
+    <input type="text" id="manualSeed" placeholder="Enter Seed as Hex"/>
+
+    <label>Enter Encrypted Message (Base64)</label>
+    <input type="text" id="manualEncryptedMessage" placeholder="Enter Encrypted Message"/>
+
+    <button onclick="manualDecrypt()">Decrypt Message</button>
+
+    <!-- Move Decrypted message here -->
+    <label>Decrypted Message</label>
+    <pre id="decryptedOutput">--</pre>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
